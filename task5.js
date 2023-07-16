@@ -1,13 +1,12 @@
 function findIndexOfCar(seats, status, number){
   let ans = -1;
-  let ok=[];
-  for(let i =0;i<seats.length;i++){
-    if(status[i]==1 && seats[i]>=number){
-      ok.push(i)
+  let availableNum=[];
+  for(let i =0; i < seats.length; i++){
+    if(status[i] == 1 && seats[i]>=number){
+      availableNum.push(seats[i])
     }
   }
-  let shortList = ok.map(i => seats[i]);
-  let min= Math.min(...shortList);
+  let min= Math.min(...availableNum);
   for(let i=0;i<seats.length;i++){
     if(seats[i]==min){
       ans=i;
