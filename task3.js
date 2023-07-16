@@ -1,9 +1,5 @@
 function func(...persons){
-  let middles = [];
-  persons.forEach(person=>{
-    let middle = person[1];
-    middles.push(middle);
-  }) ;
+  middles=persons.map(person=>person[1])
   console.log(`所有的middle name:${middles}`)
   let uniqueMiddles = [];//用來存放沒有重複的字
   middles.forEach(n =>{
